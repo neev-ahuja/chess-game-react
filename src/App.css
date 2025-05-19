@@ -1,0 +1,357 @@
+/* Chess piece styling */
+.text-black {
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.7);
+  }
+  
+  .text-white {
+    color: #ffffff;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.7);
+  }
+  
+  /* Improve appearance on hover */
+  .grid div:hover {
+    cursor: pointer;
+    opacity: 0.9;
+  }
+
+/* Chess board styling */
+.chess-board-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.chess-board {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.board-with-ranks {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Board coordinates styling */
+.files-labels {
+  display: flex;
+  flex-direction: row;
+  background-color: #8b5a2b;
+  background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+  padding: 4px 0;
+}
+
+.ranks-labels {
+  display: flex;
+  flex-direction: column;
+  background-color: #8b5a2b;
+  background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+  padding: 0 4px;
+}
+
+.coord-label {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f9e3c6;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+/* Board and cells */
+.board {
+  display: flex;
+  flex-direction: column;
+  border: 8px solid #8b5a2b;
+  border-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png') 30 stretch;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+.board-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.board-cell {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.black-cell {
+  background-color: #b58863;
+  background-image: url('https://www.transparenttextures.com/patterns/dark-wood.png');
+}
+
+.white-cell {
+  background-color: #f0d9b5;
+  background-image: url('https://www.transparenttextures.com/patterns/light-paper-fibers.png');
+}
+
+.selected-cell::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(65, 105, 225, 0.4);
+  z-index: 1;
+  box-shadow: inset 0 0 10px 3px rgba(30, 64, 175, 0.6);
+}
+
+.last-move-cell::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(252, 211, 77, 0.3);
+  z-index: 1;
+}
+
+/* Chess pieces */
+.chess-piece {
+  width: 85%;
+  height: 85%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 2;
+  filter: drop-shadow(2px 4px 2px rgba(0, 0, 0, 0.3));
+  position: relative;
+}
+
+.dot {
+  width: 40%;
+  height: 40%;
+  background-color: #505050;
+  border-radius: 50%;
+}
+
+.capturable {
+  position: relative;
+}
+
+.capturable::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background-color: rgba(255, 0, 0, 0.3);
+  border-radius: 50%;
+  border: 3px solid rgba(255, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+  animation: pulse 1.5s infinite;
+  z-index: -1;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+  }
+  
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
+  }
+  
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+  }
+}
+
+.chess-piece:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  filter: drop-shadow(2px 6px 4px rgba(0, 0, 0, 0.4));
+}
+
+/* White pieces */
+.white-p {
+  background-image: url('https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wp.png');
+}
+.white-r {
+  background-image: url('https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wr.png');
+}
+.white-n {
+  background-image: url('https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wn.png');
+}
+.white-b {
+  background-image: url('https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wb.png');
+}
+.white-q {
+  background-image: url('https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wq.png');
+}
+.white-k {
+  background-image: url('https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wk.png');
+}
+
+/* Black pieces */
+.black-p {
+  background-image: url('https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bp.png');
+}
+.black-r {
+  background-image: url('https://images.chesscomfiles.com/chess-themes/pieces/neo/150/br.png');
+}
+.black-n {
+  background-image: url('https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bn.png');
+}
+.black-b {
+  background-image: url('https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bb.png');
+}
+.black-q {
+  background-image: url('https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bq.png');
+}
+.black-k {
+  background-image: url('https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bk.png');
+}
+
+/* Button effects */
+button {
+  transition: all 0.2s;
+  transform: translateY(0);
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 6px;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.files {
+  margin-left: 35px;
+}
+
+.ranks {
+  margin-top: 35px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .board-cell {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .coord-label {
+    width: 20px;
+    height: 20px;
+    font-size: 0.7rem;
+  }
+
+  .chess-piece {
+    width: 90%;
+    height: 90%;
+  }
+
+  .dot {
+    width: 30%;
+    height: 30%;
+  }
+
+  .files {
+    margin-left: 20px;
+  }
+
+  .ranks {
+    margin-top: 20px;
+  }
+
+  button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .board-cell {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .coord-label {
+    width: 18px;
+    height: 18px;
+    font-size: 0.65rem;
+  }
+
+  .chess-piece {
+    width: 85%;
+    height: 85%;
+  }
+
+  .dot {
+    width: 25%;
+    height: 25%;
+  }
+
+  .files {
+    margin-left: 18px;
+  }
+
+  .ranks {
+    margin-top: 18px;
+  }
+
+  button {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .board-cell {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .coord-label {
+    width: 15px;
+    height: 15px;
+    font-size: 0.6rem;
+  }
+
+  .chess-piece {
+    width: 80%;
+    height: 80%;
+  }
+
+  .dot {
+    width: 20%;
+    height: 20%;
+  }
+
+  .files {
+    margin-left: 15px;
+  }
+
+  .ranks {
+    margin-top: 15px;
+  }
+
+  button {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+}
