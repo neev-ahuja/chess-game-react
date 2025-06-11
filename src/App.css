@@ -355,3 +355,19 @@ button:active {
     font-size: 0.8rem;
   }
 }
+ .chess-piece {
+  transition: transform 0.3s ease;
+}
+
+.chess-piece.animating {
+  animation: movePiece 0.3s ease;
+}
+
+@keyframes movePiece {
+  0% {
+    transform: translate(0, 0);
+  } 
+  100% {
+    transform: translate(var(--move-x), var(--move-y));
+  }
+}
