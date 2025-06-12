@@ -77,7 +77,6 @@ const ChessBoard = ({mode}) => {
       <div className={`text-5xl select-none cursor-pointer transition-all duration-200 hover:scale-110 ${
         isWhitePiece ? 'text-white drop-shadow-[2px_2px_4px_rgba(0,0,0,0.8)]' : 'text-slate-800 drop-shadow-[1px_1px_2px_rgba(255,255,255,0.5)]'
       } ${isCapturable ? 'animate-pulse ring-4 ring-red-500/50 rounded-full p-1' : ''} chess-piece ${piece === 'dot' ? 'dot' : `${isWhitePiece ? 'white-' + pieceType : 'black-' + pieceType}`}`}>
-        {/* {getPieceSymbol(piece)} */}
       </div>
     );
   };
@@ -214,14 +213,12 @@ const ChessBoard = ({mode}) => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
-      {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 text-6xl text-yellow-400/10 animate-pulse">♜</div>
         <div className="absolute top-40 right-20 text-8xl text-yellow-400/5 animate-bounce">♞</div>
         <div className="absolute bottom-40 left-20 text-7xl text-yellow-400/10 animate-pulse" style={{animationDelay: '1s'}}>♝</div>
         <div className="absolute bottom-20 right-10 text-9xl text-yellow-400/5 animate-bounce" style={{animationDelay: '2s'}}>♛</div>
         
-        {/* Floating Particles */}
         {[...Array(15)].map((_, i) => (
           <div
             key={i}
@@ -237,7 +234,6 @@ const ChessBoard = ({mode}) => {
       </div>
 
       <div className="relative z-10 flex flex-col items-center min-h-screen py-8">
-        {/* Header */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center space-x-3 mb-4">
             <Crown className="h-10 w-10 text-yellow-400" />
@@ -248,37 +244,6 @@ const ChessBoard = ({mode}) => {
           <p className="text-slate-300 text-lg">Master the Game of Kings</p>
         </div>
 
-        {/* Game Mode Toggle */}
-        {/* <div className="bg-slate-800/50 backdrop-blur-sm border border-yellow-500/20 rounded-xl p-4 mb-6">
-          <div className="flex items-center justify-center space-x-4">
-            <div className="flex items-center space-x-2">
-              <Users className="h-5 w-5 text-yellow-400" />
-              <span className="text-white font-medium">Player vs Player</span>
-            </div>
-            <label className="relative inline-flex items-center cursor-pointer">
-              <input
-                type="checkbox"
-                checked={isAiMode}
-                onChange={() => {
-                  setIsAiMode(!isAiMode);
-                  if (!isAiMode) {
-                    setIsAiThinking(false);
-                    setCapturable({});
-                    updateBoard();
-                  }
-                }}
-                className="sr-only peer"
-              />
-              <div className="w-11 h-6 bg-slate-600 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-yellow-500"></div>
-            </label>
-            <div className="flex items-center space-x-2">
-              <Bot className="h-5 w-5 text-yellow-400" />
-              <span className="text-white font-medium">Player vs AI</span>
-            </div>
-          </div>
-        </div> */}
-
-        {/* Game Status */}
         <div className="bg-slate-800/70 backdrop-blur-sm border border-yellow-500/30 px-6 py-3 rounded-xl mb-8 shadow-lg">
           <div className="flex items-center justify-center space-x-3">
             {isAiThinking ? (
@@ -316,9 +281,7 @@ const ChessBoard = ({mode}) => {
           </div>
         </div>
 
-        {/* Chess Board */}
         <div className="bg-slate-800/30 backdrop-blur-sm border border-yellow-500/20 p-6 rounded-2xl shadow-2xl mb-8">
-          {/* File Labels (Top) */}
           <div className="flex justify-center mb-2">
             <div className="flex ml-8">
               {files.map(file => (
@@ -330,7 +293,6 @@ const ChessBoard = ({mode}) => {
           </div>
 
           <div className="flex">
-            {/* Rank Labels (Left) */}
             <div className="flex flex-col mr-2">
               {ranks.map(rank => (
                 <div key={rank} className="w-6 h-16 flex items-center justify-center text-yellow-400 font-bold text-lg">
@@ -339,7 +301,6 @@ const ChessBoard = ({mode}) => {
               ))}
             </div>
 
-            {/* Game Board */}
             <div className="border-4 border-yellow-500/30 rounded-lg overflow-hidden shadow-2xl">
               {board && board.map((row, rowIndex) => (
                 <div key={`row-${rowIndex}`} className="flex">
@@ -370,7 +331,6 @@ const ChessBoard = ({mode}) => {
           </div>
         </div>
 
-        {/* Game Controls */}
         <div className="flex flex-col sm:flex-row gap-4 mb-6">
           <button
             onClick={handleReset}
@@ -389,14 +349,12 @@ const ChessBoard = ({mode}) => {
           </button>
         </div>
 
-        {/* Error Display */}
         {error && (
           <div className="bg-red-500/20 backdrop-blur-sm border border-red-500/40 px-4 py-2 rounded-lg">
             <p className="text-red-300 font-medium">{error}</p>
           </div>
         )}
 
-        {/* Checkmate Modal */}
         {gameStatus === 'checkmate' && (
           <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50">
             <div className="bg-slate-800/90 backdrop-blur-lg border border-yellow-500/30 p-8 rounded-2xl shadow-2xl text-center max-w-md mx-4">

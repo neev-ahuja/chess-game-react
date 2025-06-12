@@ -251,8 +251,44 @@ button:active {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .board-cell {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .coord-label {
+    width: 25px;
+    height: 25px;
+    font-size: 0.8rem;
+  }
+
+  .chess-piece {
+    width: 80%;
+    height: 80%;
+  }
+
+  .dot {
+    width: 35%;
+    height: 35%;
+  }
+
+  .files {
+    margin-left: 25px;
+  }
+
+  .ranks {
+    margin-top: 25px;
+  }
+
+  button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .board-cell {
+    width: 40px;
+    height: 40px;
   }
   
   .coord-label {
@@ -262,8 +298,8 @@ button:active {
   }
 
   .chess-piece {
-    width: 90%;
-    height: 90%;
+    width: 75%;
+    height: 75%;
   }
 
   .dot {
@@ -280,26 +316,26 @@ button:active {
   }
 
   button {
-    padding: 8px 16px;
-    font-size: 0.9rem;
+    padding: 6px 12px;
+    font-size: 0.8rem;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 360px) {
   .board-cell {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
   }
   
   .coord-label {
     width: 18px;
     height: 18px;
-    font-size: 0.65rem;
+    font-size: 0.6rem;
   }
 
   .chess-piece {
-    width: 85%;
-    height: 85%;
+    width: 70%;
+    height: 70%;
   }
 
   .dot {
@@ -316,44 +352,8 @@ button:active {
   }
 
   button {
-    padding: 6px 12px;
-    font-size: 0.85rem;
-  }
-}
-
-@media (max-width: 360px) {
-  .board-cell {
-    width: 35px;
-    height: 35px;
-  }
-  
-  .coord-label {
-    width: 15px;
-    height: 15px;
-    font-size: 0.6rem;
-  }
-
-  .chess-piece {
-    width: 80%;
-    height: 80%;
-  }
-
-  .dot {
-    width: 20%;
-    height: 20%;
-  }
-
-  .files {
-    margin-left: 15px;
-  }
-
-  .ranks {
-    margin-top: 15px;
-  }
-
-  button {
     padding: 5px 10px;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 }
  .chess-piece {
@@ -366,9 +366,12 @@ button:active {
 
 @keyframes movePiece {
   0% {
-    transform: translate(0, 0);
-  } 
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
   100% {
-    transform: translate(var(--move-x), var(--move-y));
+    transform: scale(1);
   }
 }

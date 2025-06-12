@@ -4,14 +4,12 @@ const ComingSoon = () => {
     const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
-      {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 text-6xl text-yellow-400/10 animate-pulse">♜</div>
         <div className="absolute top-40 right-20 text-8xl text-yellow-400/5 animate-bounce">♞</div>
         <div className="absolute bottom-40 left-20 text-7xl text-yellow-400/10 animate-pulse" style={{animationDelay: '1s'}}>♝</div>
         <div className="absolute bottom-20 right-10 text-9xl text-yellow-400/5 animate-bounce" style={{animationDelay: '2s'}}>♛</div>
         
-        {/* Floating Particles */}
         {[...Array(15)].map((_, i) => (
           <div
             key={i}
@@ -27,7 +25,6 @@ const ComingSoon = () => {
       </div>
 
       <div className="relative z-10 flex flex-col items-center min-h-screen py-8">
-        {/* Header */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center space-x-3 mb-4">
             <Crown className="h-10 w-10 text-yellow-400" />

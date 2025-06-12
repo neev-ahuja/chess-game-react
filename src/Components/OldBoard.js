@@ -51,8 +51,6 @@ const ChessBoard = () => {
       if (line.startsWith('bestmove')) {
         const move = line.split(' ')[1];
         if (move && move.length >= 4) {
-          // Highlight or make the move
-          // console.log(`Suggested move: ${move}`);
           return move;
         }
       }
